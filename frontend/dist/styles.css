@@ -1,0 +1,39 @@
+/*
+white - #f5e8df
+light blue - #bfdad3
+pink - #ee94a9
+red - #eb2823
+black - #29292b
+*/
+
+html {
+  height: 100%;
+}
+body {
+  background-image: url('./images/wave.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.header-text {
+  color:#ee94a9;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+.header-div {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ border-bottom: 2px solid #ee94a9;
+}
+
+.search-bar {
+  display: flex;
+  height: 3em;
+  align-items: center;
+}
+

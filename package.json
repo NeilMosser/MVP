@@ -1,0 +1,36 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "A project for Hack Reactor",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack --config ./webpack.config.js --mode development -w",
+    "start": "nodemon ./backend/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeilMosser/MVP.git"
+  },
+  "author": "Neil Mosser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeilMosser/MVP/issues"
+  },
+  "homepage": "https://github.com/NeilMosser/MVP#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2",
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

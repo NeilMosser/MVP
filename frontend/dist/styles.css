@@ -17,6 +17,10 @@ body {
   overflow: hidden;
 }
 
+.app-container {
+  display: flex;
+}
+
 
 .header-text {
   color:#ee94a9;
@@ -35,5 +39,9 @@ body {
   display: flex;
   height: 3em;
   align-items: center;
+}
+
+.youtube-player {
+  margin-top: 1em;
 }
 

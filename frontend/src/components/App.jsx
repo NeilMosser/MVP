@@ -12,16 +12,18 @@ const App = () => {
   const [currentSongInfo, setCurrentSongInfo] = useState({});
 
   return (
-    <div className='app-container'>
-      <GlobalContext.Provider value={{
-        currentSongInfo, setCurrentSongInfo
-        }}>
+    <GlobalContext.Provider value={{
+      currentSongInfo, setCurrentSongInfo
+      }}>
+    <div className='header-container'>
          <Header />
+         </div>
+         <div className='app-container'>
          <VideoPlayer />
          <VideoDescription />
          <LyricBox />
-      </GlobalContext.Provider>
     </div>
+    </GlobalContext.Provider>
   )
 }
 

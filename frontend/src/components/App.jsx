@@ -12,9 +12,9 @@ const YOUTUBE_API_KEY = require('../../../backend/server/config.js');
 const App = () => {
 
   const [currentSongInfo, setCurrentSongInfo] = useState({});
-  const [lyrics, setLyrics] = useState({});
+  const [lyrics, setLyrics] = useState({"lyrics": "loading..."});
   const [videoId, setVideoId] = useState('G97_rOdHcnY');
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('jiang nan');
 
 useEffect(() => {
 axios.get(`lyrics/${searchText}`)
@@ -23,13 +23,24 @@ axios.get(`lyrics/${searchText}`)
       setLyrics(response.data);
     })
 
-    axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${YOUTUBE_API_KEY}`)
+}, [searchText])
+
+useEffect(() => {
+  axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${YOUTUBE_API_KEY}`)
+  .then((response) => {
+    console.log(response);
+  })
+
+}, [videoId])
+
+
+useEffect(() => {
+  console.log("this is what we send ", lyrics.lyrics)
+  axios.post(`/translate/`, lyrics.lyrics)
     .then((response) => {
-      console.log(response);
+      console.log("Here --------->" + lyrics.lyrics);
     })
-}, [videoId, searchText])
-
-
+}, [lyrics])
 
   return (
     <GlobalContext.Provider value={{

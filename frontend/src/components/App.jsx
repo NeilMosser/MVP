@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './Header.jsx';
 import VideoPlayer from './VideoPlayer.jsx';
@@ -14,9 +14,10 @@ const App = () => {
   const [currentSongInfo, setCurrentSongInfo] = useState({});
   const [lyrics, setLyrics] = useState({});
   const [videoId, setVideoId] = useState('G97_rOdHcnY');
+  const [searchText, setSearchText] = useState('');
 
-
-  axios.get('lyrics/la tortura')
+useEffect(() => {
+axios.get(`lyrics/${searchText}`)
     .then((response) => {
       console.log(response);
       setLyrics(response.data);
@@ -26,13 +27,16 @@ const App = () => {
     .then((response) => {
       console.log(response);
     })
+}, [videoId, searchText])
+
 
 
   return (
     <GlobalContext.Provider value={{
       currentSongInfo, setCurrentSongInfo,
       lyrics, setLyrics,
-      videoId, setVideoId
+      videoId, setVideoId,
+      searchText, setSearchText
       }}>
     <div className='header-container'>
          <Header />

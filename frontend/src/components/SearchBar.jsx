@@ -5,20 +5,20 @@ import axios from 'axios';
 
 
 const SearchBar = () => {
-  const [text, setText] = useState("");
+  const {searchText, setSearchText} = useContext(GlobalContext);
   const { currentSongInfo, setCurrentSongInfo } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (text === "") {
+    if (searchText === "") {
       alert("Please enter a song to search for!");
     } else {
-      alert(text);
-      setCurrentSongInfo(text);
+      alert(searchText);
+      setCurrentSongInfo(searchText);
     }
   };
 
-  const onChange = (e) => setText(e.target.value);
+  const onChange = (e) => setSearchText(e.target.value);
 
   return (
     <div>
@@ -27,7 +27,7 @@ const SearchBar = () => {
           type="text"
           name="search-text"
           placeholder="Search for a song..."
-          value={text}
+          value={searchText}
           onChange={onChange}
           className="search-input"
         />

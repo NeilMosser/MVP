@@ -20,9 +20,10 @@ const LanguageBox = () => {
   const {lyrics, setLyrics} = useContext(GlobalContext);
   const {videoId, setVideoId} = useContext(GlobalContext);
 
+
   useEffect(() => {
-    console.log(videoId);
-  }, [videoId]);
+    console.log();
+   }, [videoId]);
 
   const handleClick = (e) => {
     let modifier = Math.floor((Math.random() * 3));

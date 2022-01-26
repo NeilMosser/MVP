@@ -15,30 +15,32 @@ const App = () => {
   const [lyrics, setLyrics] = useState({"lyrics": "loading..."});
   const [videoId, setVideoId] = useState('G97_rOdHcnY');
   const [searchText, setSearchText] = useState('jiang nan');
+  const [descriptionInfo, setDescriptionInfo] = useState({});
 
 useEffect(() => {
 axios.get(`lyrics/${searchText}`)
     .then((response) => {
-      console.log(response);
+      //console.log(response);
       setLyrics(response.data);
     })
 
-}, [searchText])
+}, [currentSongInfo])
 
 useEffect(() => {
   axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${YOUTUBE_API_KEY}`)
   .then((response) => {
-    console.log(response);
+    setDescriptionInfo(response.data.items[0].snippet)
+    console.log(descriptionInfo);
   })
 
 }, [videoId])
 
 
 useEffect(() => {
-  console.log("this is what we send ", lyrics.lyrics)
+  //console.log("this is what we send ", lyrics.lyrics)
   axios.post(`/translate/`, lyrics.lyrics)
     .then((response) => {
-      console.log("Here --------->" + lyrics.lyrics);
+      //console.log("Here --------->" + lyrics.lyrics);
     })
 }, [lyrics])
 
@@ -47,7 +49,8 @@ useEffect(() => {
       currentSongInfo, setCurrentSongInfo,
       lyrics, setLyrics,
       videoId, setVideoId,
-      searchText, setSearchText
+      searchText, setSearchText,
+      descriptionInfo, setDescriptionInfo
       }}>
     <div className='header-container'>
          <Header />

@@ -9,7 +9,8 @@ const VideoDescription = () => {
 
   return(
 
-      <div className='video-description' >{currentSongInfo.items[0].snippet.title}</div>
+      <div className='video-description' >{
+        currentSongInfo.items !== undefined ? currentSongInfo.items[0].snippet.title : 'Loading'}</div>
 
   );
 };

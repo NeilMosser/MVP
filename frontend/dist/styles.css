@@ -65,9 +65,25 @@ body {
 }
 
 .language-box {
-  background-color: coral;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 82%;
   margin-top: 2em;
+  background-color: #ee94a9;
+
+}
+
+.flag-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+
+}
+
+.flag {
+  height: 40px;
+  width: 40px;
+  margin-left: 1em;
+  margin-right: 1em;
 }

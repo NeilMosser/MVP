@@ -20,6 +20,7 @@
   "dependencies": {
     "@u-wave/react-youtube": "^0.7.2",
     "axios": "^0.25.0",
+    "country-flag-icons": "^1.4.20",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
     "genius-lyrics": "^4.3.5",

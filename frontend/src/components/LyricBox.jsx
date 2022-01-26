@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import GlobalContext from '../contexts/GlobalContext.jsx';
+
+
 
 const LyricBox = () => {
 
+  const {lyrics, setLyrics} = useContext(GlobalContext);
+
   return(
-    <div>lyricBox</div>
+    <div className="lyric-box">{lyrics.lyrics}</div>
+
   );
 };
 

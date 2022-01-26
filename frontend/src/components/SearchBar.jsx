@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
+import GlobalContext from '../contexts/GlobalContext.jsx';
 import axios from 'axios';
 
-
-const { useState } = React;
 
 
 const SearchBar = () => {
   const [text, setText] = useState("");
+  const { currentSongInfo, setCurrentSongInfo } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +14,7 @@ const SearchBar = () => {
       alert("Please enter a song to search for!");
     } else {
       alert(text);
-      setText("");
+      setCurrentSongInfo(text);
     }
   };
 

@@ -10,7 +10,7 @@ html {
   height: 100%;
 }
 body {
-  background-image: url('./images/wave.svg');
+  background-image: url('./images/wave3.svg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -19,6 +19,7 @@ body {
 
 .app-container {
   display: flex;
+  justify-content: center;
 }
 
 
@@ -45,3 +46,28 @@ body {
   margin-top: 1em;
 }
 
+.player-lyric {
+  display: flex;
+  flex-direction: column;
+}
+
+.lyric-box {
+  width:40%;
+  margin-top: 1em;
+  background-color: aqua;
+  margin-left:2em;
+}
+
+.video-description {
+  background-color: bisque;
+  padding-bottom: 5em;
+  margin-top: 2em;
+}
+
+.language-box {
+  background-color: coral;
+  margin-left: auto;
+  margin-right: auto;
+  width: 82%;
+  margin-top: 2em;
+}

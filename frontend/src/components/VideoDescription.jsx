@@ -12,7 +12,9 @@ const VideoDescription = () => {
 
       <div className='video-description' >
         {descriptionInfo !== undefined ? `Title: ${descriptionInfo.title}` : 'Loading...'}
-        {descriptionInfo !== undefined ? `Description: ${descriptionInfo.description}` : 'Loading...'}
+        <div>
+        {descriptionInfo.description !== undefined ? `Description: ${descriptionInfo.description.substring(0,250) + '...'}` : 'Loading...'}
+        </div>
       </div>
 
   );

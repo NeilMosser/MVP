@@ -28,10 +28,12 @@
     "live-server": "^1.2.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "simple-oauth2": "^4.3.0",
-    "songlyrics": "^2.2.4"
+    "songlyrics": "^2.2.4",
+    "youtube-api-search": "^0.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",

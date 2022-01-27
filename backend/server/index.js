@@ -7,6 +7,7 @@ const app = express();
 const PORT = 3000;
 app.use(express.json());
 app.use(express.static(__dirname + '/../../frontend/dist/'));
+
 app.get('/lyrics/*', (req, res) => {
   let songName = req.url;
     songlyrics(songName)
@@ -24,6 +25,7 @@ app.post('/translate/*', (req, res) => {
     res.send(translatedText);
   })();
 })
+
 
 
 

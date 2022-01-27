@@ -13,8 +13,8 @@ const App = () => {
 
   const [currentSongInfo, setCurrentSongInfo] = useState({});
   const [lyrics, setLyrics] = useState({"lyrics": "loading..."});
-  const [videoId, setVideoId] = useState('G97_rOdHcnY');
-  const [searchText, setSearchText] = useState('jiang nan');
+  const [videoId, setVideoId] = useState('Dsp_8Lm1eSk');
+  const [searchText, setSearchText] = useState('la tortura');
   const [descriptionInfo, setDescriptionInfo] = useState({});
 
 useEffect(() => {
@@ -24,7 +24,7 @@ axios.get(`lyrics/${searchText}`)
       setLyrics(response.data);
     })
 
-}, [currentSongInfo])
+}, [currentSongInfo, videoId])
 
 useEffect(() => {
   axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${YOUTUBE_API_KEY}`)

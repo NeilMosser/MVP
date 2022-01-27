@@ -23,7 +23,6 @@ const SearchBar = () => {
 
   const searchVideos = (term) => {
     YTSearch({key: YOUTUBE_API_KEY, term: term}, (videos) => {
-      console.log(videos[0].id.videoId);
       setVideoId(videos[0].id.videoId);
     })
   }

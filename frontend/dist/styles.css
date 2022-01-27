@@ -57,6 +57,7 @@ body {
   background-color: #ee94a9;
   margin-left:2em;
   font-size: larger;
+  position: relative;
 }
 
 .video-description {
@@ -89,4 +90,19 @@ body {
   width: 40px;
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.translate-button {
+  height: 20px;
+  width: 80px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+
+.select-language {
+  position: absolute;
+  bottom: 0;
+  right: 90px;
 }

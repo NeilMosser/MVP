@@ -8,7 +8,7 @@ const VideoPlayer = () => {
   const {videoId, setVideoId} = useContext(GlobalContext);
 
   useEffect(() => {
-    console.log(videoId);
+    // console.log(videoId);
   }, [videoId])
 
   return(
